@@ -11,6 +11,9 @@ public class DeathZone : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.transform.position = Spawn.position;
+            other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            other.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            other.gameObject.transform.position = Spawn.position;
         }
     }
 }
